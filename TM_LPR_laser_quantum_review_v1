@@ -1,0 +1,398 @@
+% Template file for the Laser \& Photonics Reviews LaTeX document
+% class lpr2.cls
+% 
+% All lines starting with '% ' are just comments and should be 
+% deleted in the final article.
+% 
+% -MWL- 2010-11-22
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\documentclass[nopubldata]{lpor2014}
+\usepackage{amsmath,amssymb,subfigure,float,graphicx}
+% 
+% By default, TeX uses the same search path for graphics files it uses
+% for .tex files.  The \graphicspath command adds to that; its
+% argument is a list of relative or absolute paths in UNIX notation.
+% Every entry must end with "/" and must be enclosed in a pair of
+% braces additional to the argument delimiter braces, see below.
+% Spaces or other non-ASCII signs inside file and folder names are
+% generally problematic with TeX, so they should not be used.
+% 
+% It is considered best practice to hold all files needed in one
+% directory altogether with the article file itself and to use
+% subdirectories therein (e.g. one named ``figs'', see below) to
+% further tighty up the article's hierarchical structure.
+\graphicspath{{figs/}}
+% 
+% Please use this command if you want to define some additional math
+% operator(s), e.g., \DeclareMathOperator{\op}{op}
+% \DeclareMathOperator{}{}
+% 
+% Using the following macro you can declare hyphenation exceptions to the
+% rules LaTeX and the Babel package implement.  To do so, each 
+% specific word has to be entered with the allowed splitting 
+% locations indicated with hyphens.
+\hyphenation{wave-guide wave-guides}  
+\begin{document}
+%%% 
+% The following  four lines will be completed by the publisher: 
+% \setpages[]{}
+% \setvolume[]{}
+% \setyear{}%
+% \setdoi{}%
+%%% 
+% 
+% Here, the file name of the title figure is to be given in the form
+% \titlefigure{<filename>}.
+% If you don't want a figure here, just omit or comment out this line.
+\titlefigure{laser_writing_1_vglow_v2}
+
+% Give an abstract text:
+\abstract{The femtosecond laser direct-writing (FLDW) of waveguide circuits in gasses has seen interest from number of fields over the previous 18 years. It has evolved from a curiosity to a viable platform for the rapid prototyping of small scale circuits. The field of quantum information science (QIS) has exploited this capability and in the process advanced the processing technique. In this review the technological aspects of the laser inscription technique relevant to QIS will be discussed. A range of the demonstrations which have been enabled by laser written circuits will be outlined, these include novel circuits, simulations, photon sources and detection. This places the FLDW technique among the few integrated optical platforms to have produced individually every component required for scalable quantum computation.  }
+
+% In the following lines, title and authoring informaton are to be 
+% given.  First the article's main title: 
+\title{Laser written circuits enable quantum photonics}
+% 
+% If the article has a very long title or lots of authors, then 
+% please give shorter versions of that for the column title:
+\titlerunning{Laser written quantum circuits}
+% Please name all authors and tag them with their respective 
+% institute(s) using the \inst directive.  The corresponding author 
+% gets an additional asterisk, e.g., as in
+% \author{First Author\inst{1,*}, Second Author\inst{2,3}, and Third Author\inst{2}}
+% If there is just one affiliation the numbers are omitted.
+\author{Thomas Meany\inst{1,2,*},Markus Gr\"{a}fe\inst{3}, Ren\'{e} Heilmann\inst{3}, Armando Perez-Leija\inst{3}, Simon Gross\inst{1}, Alexander Szameit\inst{3}, M. J. Steel\inst{1}, Michael J. Withford\inst{1}}
+% 
+% Provide a short name list for the column title.  If there are more
+% than two authors, please indicate that in the form "F. Author et
+% al."  Here are the schemes for one, two, and three or more authors,
+% respectively:
+% \authorrunning{F. Author}
+% \authorrunning{F. Author and S. Author}
+% \authorrunning{F. Author et al.}
+\authorrunning{T. Meany \emph{et al.}}
+% 
+% Here the institute(s) should be given.  If there is more than one, 
+% the entries are separated by \and tags.
+% \institute{%
+%   University of ...
+% \and
+%   University of ...
+% }
+\institute{%
+Centre for Ultrahigh bandwidth Devices for Optical Systems (CUDOS), MQ Photonics Research Centre, Department of Physics and Astronomy, Macquarie University, North Ryde, 2109 NSW, Australia. \\ 
+\and
+Quantum Information Group, Toshiba Research Europe Ltd., Cambridge Research Laboratory, 208 Cambridge Science Park, Milton Rd., Cambridge, CB4 0GZ, UK. \\
+\and
+Institute of Applied Physics,  Abbe Center of Photonics, Friedrich-Schiller-Universit at Jena, Max-Wien-Platz 1, Jena 07743, Germany.
+}
+% 
+% Give the e-mail address of the corresponding author:
+\mail{\email{thomas.meany@students.mq.edu.au}}
+% 
+% Give some keywords for the article, if you have:
+\keywords{}
+% 
+%%% 
+% The following  four lines will be completed by the publisher: 
+% \received{}
+% \revised{}
+% \accepted{}
+% \published{\block}
+%%% 
+\maketitle
+% Here, the main text starts.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%Delete before publication!!%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Author notes
+%Outline the significance of the field. What has this field done? Where is this field going? Provide a background to the processing of laser written circuits (note this is the topic of book chapters, reviews and companies.) \textbf{FLDW has enhanced the field of quantum information and vice-versa.} Provide a background to quantum information (note that this has been the feature of several reviews!!)
+%Quantum circuits should be explained in the context of linear optical quantum computing. Both the polarisation and spatial encoding schemes should be explained in detail. The drawback of polarisation encoding, requiring polarisation rotation elements (ideally tunable) and spatial, consuming additional chip real estate should be discussed. Furthermore the circuit loss, complexity and error tolerances are important to mention.
+%Quantum simulation, exploiting the 3D interaction regions obtainable using the FLDW technique are a key advantage. Boson sampling and 3D waveguide arrays are the expertise of University Jena. 
+%Development and integration of on-chip photon production and detection are crucial to the field. Progress in this area is very important to discuss in the context of reducing size and increasing optical functions. What has this field done? Where is it going?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Outline}
+Currently quantum information science promises to use inherently quantum mechanical phenomena to encode, process and transmit information. In seeking out a platform to build such an architecture photonics stands out as a desirable candidate due to the ease with which photons can be transmitted in existing communication networks. Multiple degrees of freedom of the photon can be prepared in distinct sates and manipulated using conventional optical components such as waveplates and beamsplitters. Furthermore, photons do not easily interact with one another or with the environment meaning that noise due to a quantum state interacting with its surroundings is virtually eliminated. However, quantum photonics places stringent demands on a number of system properties. Quantum circuits are typically composed of nested interferometric components which must be phase stable and the loss of an optical circuit limits for instance the transmission of a quantum communication channel. These properties accompanied with the need to miniaturize circuits to enable high density complex designs has encouraged the on-chip integration of photonic quantum circuits. High density optical circuit fabrication is achievable with conventional technologies readily integrated with conventional CMOS fabrication techniques~\cite{Orcutt2011,Orcutt2012,Wade2013}. However, due to challenges in the deterministic production and detection of photons only small scale circuits have been demonstrated. Usually these demonstrations consist of less than four photons and 15 detectors. Hence high density circuits are currently unnecessary for these prototype device designs. The high extraction efficiency of glass waveguide circuits has made them the most practical method for exploring a range of quantum photonic circuits. Politi et al. were the first to demonstrate a quantum circuit using on-chip waveguides~\cite{Politi2008}. These experiments utilised a silica-on-silicon planar lightwave circuit (PLC) for a number of reasons. One of the most convenient wavelengths for producing coincident pairs of identical photons is 800~nm and this overlaps with the high efficiency region for  silicon avalanche photon diodes. Hence transparency in this wavelength range is important. Furthermore, low index contrast waveguides have low transmission loss and have excellent mode overlap with optical fibre meaning that the overall extraction efficiency is high. This is an important feature which enables more rapid circuit characterisations. 
+
+The femtosecond laser direct-write (FLDW) technique is a novel way to produce glass waveguides and helps alleviate some of the constraints of PLC design. The FLDW method uses the high peak powers achieved with ultrafast lasers to induce localised nonlinear absorption at a laser focus within a transparent substrate. The absorption of this energy can cause a refractive index change and in the case where this is positive waveguides can be formed by translating the substrate with respect to the focus leading to waveguide formation. Unlike PLC fabrication the FLDW technique is a one step process, requiring no masking procedure or cleanroom environment, this means that prototypes can be produced rapidly and iterative fabrication methods can be employed. Furthermore, the laser is easily focused at multiple depths inside the material enabling three dimensional waveguide circuits which are extremely challenging to produce using lithographic means. This allows the production of coupled waveguide arrays for the study of photon correlations and novel vertically integrated waveguide circuits.
+
+In this review we will detail the progress in the field of quantum information science enabled by laser inscribed circuits. These circuits have proved valuable due to the convenience of their manufacture and their three dimensional fabrication capability. We will outline the operation and development of quantum circuits and the different methods used for their operation. The three-dimensional capability afforded by the laser inscription process and the unique simulations this has enabled will also be discussed. Finally we will outline the advances made in the integration of single photon sources and detectors in laser written circuits and the the future progress which can be achieved in the area. 
+
+\section{Background}
+\subsection{Quantum information science}
+The quantum bit, or \emph{qubit}, is the quantum analogue of the classical bit. However, rather than the fixed values of the classical bit of ``\textbf{0}" and ``\textbf{1}" the qubit can exist in a superposition of these states. The state of a single qubit can be be described by:
+\begin{equation}
+|\psi\rangle=\alpha|\textbf{0}\rangle+\beta|\textbf{1}\rangle,
+\end{equation}
+where $|\textbf{0}\rangle$ is a ket with a logical state denoted by bold numbering, $\alpha$ and $\beta$ are complex coefficients and $|\alpha|^2+|\beta|^2=1$. A general n-qubit quantum system, represented by a 2$^n$ bitstring, can be defined as:
+\begin{equation}
+|\psi\rangle=\sum_{i=0}^{2^{n-1}}c_i|x_i\rangle,
+\end{equation}
+where the complex coefficients are normalised by 
+\begin{equation}
+\sum_{i=0}^{2^{n-1}}|c_i|^2=1.
+\end{equation}
+Each qubit doubles the number of states which can be represented and this is core to the exponential scaling of computing power with only polynomial increase in required resources offered by quantum computing.
+
+Encoding a qubit using photons is straightforward and two of the most popular means are spatial mode encoding and polarisation encoding. In the case of polarisation mode encoding a qubit state can be represented by it's polarisation orientation (horozontal or vertical): $|\textbf{0}\rangle= |1\rangle_H \otimes |0\rangle_V = |H\rangle$ or $|\textbf{1}\rangle= |0\rangle_H \otimes |1\rangle_V = |V\rangle$. A polarisation encoded qubit in the state $|\psi\rangle=\alpha|\textbf{0}\rangle+\beta|\textbf{1}\rangle$ can be transformed into spatial mode encoding by using a polarising beamsplitter and half wave plate (as shown in Fig.~\ref{fig:pol_v_spatial_encoding}). In this case the mode (a or b) occupied by the photon corresponds to the logical state: $|\textbf{0}\rangle= |1\rangle_a \otimes |0\rangle_b $ or $|\textbf{1}\rangle= |0\rangle_a \otimes |1\rangle_b $. The polarisation encoding scheme is often referred to as the ``single rail" encoding scheme, since both logical states occupy the same optical mode, while the spatial mode encoding scheme is referred to as ``dual rail". It should be noted in many articles which discuss dual rail encoding the modes which correspond to the logical zero are often omitted since they do not play an active role in the circuit operation. 
+ \begin{figure}[h]
+\centering \vspace{-10mm}
+ \subfigure[]{\label{fig:pol_v_spatial_encoding}\includegraphics[width=0.35\textwidth]{pol_v_spatial_encoding}\vspace{-4mm}}\vspace{-8mm}
+\subfigure[]{\label{fig:CNOT_NS_layout}\includegraphics[width=0.43\textwidth]{CNOT_NS_layout}}
+\vspace{-4mm}
+\caption{ (a) The equivalence of single rail (polarisation) encoding and dual rail (spatial mode) encoding schemes. A Polarising beamsplitter (PBS) separates the two polarisations and a half wave plate in one mode rotates the polarisation by 90 degrees resulting in two spatially distinct modes. (b) A conceptual layout of a CNOT gate which flips the state of a target qubit conditional on the state of a control qubit. It does so by producing a phase shift on one arm of a Mach Zehnder in the path of the target qubit. When the control qubit is in the $|\textbf{1}\rangle$ state (a photon occupying mode c-1) then a phase shift of $\pi$ is imparted on one arm of the target qubit Mach Zehnder which switches the photon into the opposite mode.} \vspace{-3mm}
+ \label{fig:LOQC_concepts} 
+\end{figure}
+
+It is clear that the encoding of photons is a relatively straightforward task. Furthermore, single qubit rotations are easily achieved using components such as waveplates and beamsplitters. However, in order to perform quantum computation a two qubit gate is a necessity. Such a gate is the controlled-NOT or CNOT gate which is shown in Fig.~\ref{fig:CNOT_NS_layout}. The gate performs the following operation:
+\begin{equation}
+U_{CNOT}|\psi\rangle=
+\left[\begin{array}{1,1,1,1}
+1 &  0 & 0 &  0\\
+0 &  1 & 0 &  0\\
+0 &  0 & 0 &  1\\
+0 &  0 & 1 &  0
+\end{array}\right]
+\left[\begin{array}{1}
+c_0\\
+c_1\\
+c_2\\
+c_3
+\end{array}\right]
+=
+\left[\begin{array}{1}
+c_0\\
+c_1\\
+c_3\\
+c_2
+\end{array}\right]
+\end{equation}
+this operation flips the final two elements of the two-qubit state vector. This could be compared to the classical \emph{XOR} gate where a target register is flipped conditional on the state of a control register.
+This is a challenging gate to implement using linear optics since a nonlinear phase shift is required between two modes of the circuit; a $\pi$ phase shift must be induced by the single photon propagating in the control $|1\rangle$ mode. Despite enormous progress in cavity quantum electrodynamics (CQED) [cite sennellart] a single photon  nonlinearity sufficient to produce such a large phase shift has yet to be demonstrated. 
+
+However, in 2001, a landmark paper by Knill~\emph{et al.}~\cite{Knill2001a} outlined a means to perform efficient quantum computing using only linear optical elements. This method, referred to as linear optical quantum computing (LOQC) only requires single qubit operations to form a circuit when they are combined with projective measurement. In this proposal the nonlinear phase shift, or nonlinear sign (NS$_x$), required for a two-qubit operation was achieved through a measurement induced nonlinearity where projective measurement, combined with two-photon interference result in a probabilistic but heralded gate operation. Two-photon interference occurring at a beamsplitter is caused by a complete absence of ``which path" information between particles occupying two input modes of the beamsplitter and results in the coalescence of particles in a particular mode. 
+
+By considering a beamsplitter, with equal transmission and reflection coefficients, we can understand that it performs a unitary operation on a set of optical modes~\cite{Zeilinger1981}.
+We can define a mode creation operator which is denoted by $a_i^{\dagger}|n_i\rangle= \sqrt{n+1}|(n+1)_i\rangle$, where $n$ denotes photon number in a given mode $i$. The initial state is the vacuum state $|0\rangle$ which contains no photons. The  beamsplitter transforms input mode creation operators ($a_1^{\dagger}$ and $a_2^{\dagger}$) to output mode operators  ($b_1^{\dagger}$ and $b_2^{\dagger}$),
+\begin{equation}
+\label{Eq:mode_transformation}
+\begin{array}{1}
+a_1^{\dagger} \rightarrow \frac{1}{\sqrt{2}}\left(b_1^{\dagger}+b_2^{\dagger}\right)\\
+a_2^{\dagger} \rightarrow \frac{1}{\sqrt{2}}\left(b_1^{\dagger}-b_2^{\dagger}\right).
+\end{array}
+\end{equation}
+Therefore if we chose as an input state $|1_1 1_2\rangle$, we obtain the following output~\cite{Fearn1989},
+\begin{equation}
+\begin{array}{1}
+|1_1 1_2\rangle = a_1^{\dagger}a_2^{\dagger}|0_1 0_2\rangle  \rightarrow \frac{1}{2}\left(b_1^{\dagger}+b_2^{\dagger}\right)\left(b_1^{\dagger}-b_2^{\dagger}\right)|0_1 0_2\rangle \\ = \frac{1}{\sqrt{2}}\left(|2_1 0_2\rangle-|0_1 2_2\rangle\right).
+\end{array}
+\end{equation}
+This equation shows the output state is entangled since this is no longer separable. This state is often generalised to $|N0\rangle-|0N\rangle$ where $N$ corresponds to photon number occupied by one mode and zero denotes vacuum (or no photons present) in the other mode. This two-photon interference is caused by the beamsplitter introducing an indistinguishability between the possible paths of the photons~\cite{Ou1988}. This is in no way due to any first order interference occurring due to overlapping the photons at the beamsplitter, since these are incoherent particles. This fact has been shown in an experiment by Pittman~\emph{et al.} where which-path interference can be observed for particles which~\emph{do not} overlap in anyway at the beamsplitter~\cite{Pittman1996}.
+
+This section outlined the means for encoding single photons which are employed in demonstrations of quantum circuits. The basics of  LOQC was discussed since this is the only method capable of producing two qubit gates with linear optical components. The nonlinear phase shifts in LOQC are imparted using the phenomenon of two-photon interference and projective measurement to herald the successful output of the probabilistic circuit. The implementation of basic two-qubit gates based on this scheme will be detailed in section~\ref{sec:quantum_circuits}.
+
+\subsection{Quantum simulators}}
+
+\subsection{Waveguide formation}
+Although there has been progress in developing integrated photonic circuits for quantum information and crucial circuit elements have been produced in isolation and in monolithic demonstrations, there is still a number of challenges facing integrated quantum photonics. One issue is the availability of photon sources and detection capabilities which must be interfaced with prototype circuits. Many bulk optical photon sources operate at 800~nm and are then coupled into waveguide circuits to perform characterisations. These circuits therefore would ideally be transparent at 800~nm and have a mode size closely matched to that of a single mode fibre. This is one of the current failings of using silicon waveguide circuits. The small mode size means large input and output coupling losses which increase experimental duration. Furthermore, lithographic fabrication requires a unique photo mask for each new circuit design. This means that if a circuit design parameter needs to be tweaked very slightly, an entirely new mask must be fabricated which is both time, labour and cost intensive. The femtosecond laser direct-write (FLDW) technique offers an alternative fabrication mechanism whereby a circuit is drawn into a glass substrate using a laser focus rather than imprinted and etched using a photomask. This fabrication method has developed to become a commercially viable waveguide fabrication platform. This is demonstrated by significant recent investment in companies like Translume, Optoscribe, Nanoscribe and Femtoprint~\cite{Anscombe2010,Bellouard2012,OptoscribeLtd.2014}.
+
+The FLDW technique was first demonstrated by Davis~\emph{et al.} who modified a transparent substrate using a short pulse laser. Unlike the laser inscription of photosensitive glasses, which relies on single photon absorption from high energy ultraviolet (UV) light, the FLDW technique uses multiphoton absorption of photons with energies below the bandgap of the material. Multiphoton absorption processes are driven by the intense electric field at the focus of a short pulse laser and lead to a material modification. The benefit of this method is the fact that the energy deposition is localised at the focus since the material is otherwise transparent.  Using this technique a number of structures can be produced inside substrates ranging from damage regions and voids when high laser powers are used to smooth refractive index change (both positive and negative) for low incident powers. At intermediate energies self organised sub wavelength structures have been observed exhibiting large birefringence. This means that structures ranging from damage to refractive index change can be produced in a substrate merely by changing the power of the incident laser. Furthermore multiple different substrates can be used, ranging from doped glasses for forming active devices to glass typically used in displays and phone screens. 
+
+Both positive and negative refractive index change can be exploited to form waveguides. Waveguides can be formed using a ``depressed" structure where low index modifications surround a virgin core as has been achieved using ZBLAN glass~\cite{Gross2013}. This procedure has the advantage of leaving the properties of the core guiding region completely unchanged from the bulk material, the core size can be chosen independently of the laser modification size and the size of the depressed region can be changed to optimise mode-dependent radiative loss from the structure~\cite{Lancaster2012a,Lancaster2012}. This has permitted elegant demonstrations of high slope efficiency waveguide lasers and buried Bragg grating designs~\cite{Gross:12,Palmer2013,Lancaster2013}. However one drawback of this depressed method is the difficulty of producing smooth low-loss directional coupler junctions to enable evanescent coupling and form circuits~\cite{Dong2013}. 
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=0.48\textwidth]{laser_writing_1_vglow_v2}
+\caption{ A conceptual image of the laser inscription process. Using a short pulsed laser focused inside a glass substrate refractive index change can be formed. Translating the substrate with respect to the laser focus permits the fabrication of 3D waveguide circuits.} \vspace{-3mm}
+ \label{fig:laser_inscription} 
+ \end{center}
+\end{figure}
+
+Damage structures can also be used to produce stress induced guidance in materials which do not experience positive smooth refractive index change. Such materials include crystals, their unique electroptic and nonlinear properties originate from their crystalline structure which is anisotropic and exhibits no centre of inversion~\cite{Franken1961}. However, this tightly packed crystalline structure means that producing waveguides through densification is difficult~\cite{Chen2013}. Despite this, modifications have been observed and direct modification of the material's refractive index is designated as Type~I index modification~\cite{Gui2004,Osellame2007,Rodenas2011a}. The most common tactic employed to produce waveguides in crystalline materials is Type~II modification which uses a pair of damaged structures, in close proximity, which then produce a stress field acting as a waveguide~\cite{Thomson2006,Burghoff2007,Burghoff2006a,He2013}. This has the benefit of leaving the waveguiding region undisturbed, therefore preserving the desirable nonlinear or electrooptic properties of the material~\cite{Burghoff2006b}.
+An alternative technique is also used to produce waveguides in glass using a laser. This method uses a specialised substrate material with a photosensitive germanium doped region. This can be selectively modified using a laser. This process selectively modifies the regions which are exposed to the laser and means that waveguide circuits can be drawn rather than imprinted using a lithographic mask. It should be noted however that this method does not permit three dimensional device designs as in the case of the FLDW technique
+
+\section{Quantum circuit components}
+\label{sec:quantum_circuits}
+
+
+The FLDW technique allows one to draw a circuit without a photo-mask and therefore rapidly adjust and prototype circuit designs. This technique was initially applied to produce directional couplers for manipulating path encoded qubits by Marshall~\emph{et al.} showing that laser written circuits could offer equally high two-photon interference visibilities as their lithographically produced counterparts~\cite{Grahamoptex}. This experiment used coincident  photons produced by spontaneous parametric downconversion (SPDC) to characterise laser inscribed waveguide directional couplers (shown in Fig.~\ref{fig:GDM_opex}). Directional couplers are the integrated optic version of a bulk beamsplitter and therefore a core building block for more advanced circuit designs. They operate by bringing two waveguides into close proximity such that their evanescent fields may overlap and exchange energy. In this way a beamsplitter with any reflectivity can be produced by varying the separation between two waveguides and the length over which they interact. SPDC is a popular a means to produce pairs of photons sufficiently identical that they may exhibit two photon interference~\cite{HOM}. This occurs by a pump photon probabilistically annihilating and producing a pair of photons (referred to as the signal and idler) with lower energies. The resulting photons can be produced with a range of wavevectors $k$ and frequencies $\omega$ according to phase matching condition,
+\begin{equation}
+\Delta k = k_p(2\omega_0)-2k_{si}(\omega_0),
+\end{equation}
+where $p, s$ and $i$ refer to the pump, signal and idler respectively~\cite{Boeuf2000,Rangarajan2009}. A nonlinear crystal (BiBO) was used by Marshall~\emph{et al.} to produce pairs of photons which were entirely degenerate. These were then coupled into optical fibres and transmitted to the laser inscribed device under test while at the output a pair of detectors were used to register coincidence events as a function of the temporal delay of one photon with respect to the other.  A sharp drop in coincidence events, known as a Hong-Ou-Mandel (HOM) dip, signals that the two photons are entirely indistinguishable in every degree of freedom. This demonstrated that two-photon interference visibilities ($>95\%$), comparable to bulk optical and lithographically produce waveguides, can be obtained using FLDW waveguides and displayed the potential of FLDW devices for experiments in quantum optics.
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=0.40\textwidth]{GDM_2008_quantum_fldw}
+\caption{ The layout of the experiment conducted by Marshall~\emph{et al.} to study the feasibility of using FLDW waveguide circuits in quantum optics experiments ~\cite{Grahamoptex}. An 402~nm continuous wave laser is focused inside a BiBO crystal. Degenerate down converted photons at the wavelength of 804~nm are selected using suitable 3~nm bandpass filters. Photons are subsequently coupled into optical fibres and routed to the device under test and the outputs are monitored using avalanche photodiodes (APDs).} \vspace{-3mm}
+ \label{fig:GDM_opex} 
+\end{center}
+\end{figure}
+
+Subsequently, Sansoni~\emph{et al.} demonstrated that FLDW circuits could also be used for photons encoded in polarisation~\cite{Sansoni2010}. Crespi~\emph{et al.} incorporated this encoding method with a demonstration of a partially polarising directional coupler to form a CNOT gate for polarisation encoded qubits (see Fig.~\ref{fig:crespi_cnot})~\cite{Crespi_CNOT_2011}. This scheme is built around partially polarising beamsplitter (PPBS), a component which permits a different beamsplitting operation on the horizontal and vertical components of the optical mode. Such a component is challenging to reliably produce in integrated optics. It exploits waveguide birefringence to produce an evanescent coupling which is polarisation dependent. A  laser written PPBS  circuit was initially demonstrated by Fernandes~\emph{et al.} who used sub wavelength modifications (referred to as nanogratings) to induce a large waveguide birefringence inducing a polarisation sensitive waveguide coupling. This birefringent technique has also been used to produce half and quarter wave plates~\cite{Fernandes2011a}. The demonstration by Crespi~\emph{et al.} instead used an inherent small birefringence of the laser written waveguides caused by their elliptical shape to form a PPBS. The circuit is dense since a qubit is contained in a single mode while the PPBS operate on both modes of the qubit simultaneously. However, this circuit does not permit the on chip preparation of polarisation encoded qubits normally completed using waveplates. This issue has been recently addressed by Corrielli~\emph{et al.} and Heilmann~\emph{et al.} in demonstrations of integrated optical waveplates~\cite{Corrielli2013,Heilmann2014}. This has shown the diverse range of optical functions enabling polarisation encoded circuit operations.
+Experiments have exploited an alternative UV laser writing method to form circuits for quantum information and have shown phase control and on-chip photon number resolving detection~\cite{Smith:09,Onchipdetectors,Calkins2013a}. 
+
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=0.48\textwidth]{crespi_cnot}
+\caption{ The polarisation encoded CNOT experiment by Crespi~\emph{et al.}~\cite{Crespi_CNOT_2011}. The input states of the device are prepared using SPDC in a BBO crystal (C), polarising beamsplitter cubes (PBS), waveplates (WP) and controllers (WPC). Degenerate photons are selected using interference filters (IF). Fibres (SMF) can be strained in polarisation controllers (PC) to induce birefringence and act as waveplates. The chip contains three partially polarising directional couplers (PPDC) which are designed to operate on both modes of the input target and control qubits at once. Characterisations of the circuits operational fidelity are completed by performing process tomography at the output of the device while varying the temporal distinguishability of the photons using a delay line (DL) and measuring photocounts using single photon counting modules (SPCM).} \vspace{-3mm}
+ \label{fig:crespi_cnot} 
+\end{center}
+\end{figure}
+
+\section{Advanced circuit designs}
+Despite the progress in the design of polarisation encoded circuits an element essential in scalable quantum computing, heralded gate operation, was achieved using a dual rail or spatial encoding scheme. This circuit is a controlled phase or C-Phase, which imparts a $\pi$ phase shift on a target qubit arm conditional on the state of a control qubit. This is similar to the CNOT gate but an additional feature of the C-Phase gate is that it requires additional ancillary photons to herald the successful operation of the circuit. In this way the output of the circuit can be fed forward into another processing device. The architecture of the circuit was first proposed by Knill~\cite{Knill2002} and the theoretical proposal contrasted with the subsequent experimental demonstration is shown in Fig.~\ref{fig:knill_layout}. This circuit offers the potential of a heralded CNOT by acting as the nested nonlinear sign shift in an interferometric setup such as that shown in Fig.~\ref{fig:CNOT_NS_layout}
+\begin{figure}[h] 
+\begin{center}
+\includegraphics[width=0.40\textwidth]{knill_layout.png}
+\caption{ (Top) The conceptual design of a C-Phase gate as proposed by Knill~\cite{Knill2002} and (Bottom) show the corresponding waveguide implementation. } \vspace{-3mm}
+ \label{fig:knill_layout} 
+\end{center}
+\end{figure}
+
+One of the unique features of the laser inscription process is its potential for producing structures in three dimensions within a substrate. This can be exploited to produce waveguide interactions which are extremely challenging using two dimensional means. Three  mode transformations have been produced in substrates using a single three mode evanescently coupled region~\cite{Spagnolo2013}. Furthermore it has been proposed theoretically and recently demonstrated that these devices could have potential in quantum metrology~\cite{Spagnolo2012a}. Multimode interferometers can have multiple spatially separated photons injected into their input ports simultaneously which means a subset of the resulting fringes can be selected which contain maximally path entangled states of photons distributed across multiple arms. This advantage combined with the ease with which FLDW circuits can be used to both produce compact interaction regions and interact with the surface of a waveguide chip mean that useful multimode interference devices can be produced.
+
+ \begin{figure}[h] 
+\begin{center}
+\includegraphics[width=0.40\textwidth]{tunable_multiport}
+\caption{ A 3D quantum circuit for multidimensional quanutm metrology. } \vspace{-3mm}
+ \label{fig:knill_layout} 
+\end{center}
+\end{figure}
+
+\section{Quantum simulation}
+
+\textbf{This is the expertise of Jena}
+
+The FLDW technique also permits a truly 3D capability and initial demonstrations have included multiport beamsplitters and quantum walk devices~\cite{Meany_multiport,Owens2011,Spagnolo2013}. Futher investigations of the 2 dimensional arrays possible using the FLDW technique has led to investigations and simulations of single and two-photon correlations in waveguide arrays~\cite{Grafe2012,Rechtsman2013,Crespi2013c,Rechtsman2012,Szameit2Darrays,Poulios}. Furthermore a range of circuits have been fabricated in florescent glass which permit the direct visualisation of the propagation of light in such structures, an otherwise extremely challenging feature to recreate~\cite{Dreisow2007a,DiGiuseppe2013,Keil2011a}. The convenience of the rapid prototyping of laser written waveguide arrays has also permitted the design of structures exhibiting uniform distribution and complex disorder patterns for the observation of Anderson localisation and Bloch oscillations~\cite{SansoniQW,Crespi2013b,Corrielli2013b}. Finally, interest in boson sampling has motivated a range of waveguide arrays for the exploration of mutiphoton unitary sampling.
+
+\section{Progress towards integration}
+
+To date laser inscribed waveguides have been used to demonstrate all of the requirements for an integrated linear optical quantum computer, albeit in isolation. Heralded photon sources have been produced from laser inscribed waveguides, while detectors can be incorporated onto laser inscribed chips. A large range of small scale circuits and simulations have been performed showing the practicality of using laser inscribed circuits for prototype devices. The next steps in the field will be to enhance the fabrication techniques and to then use this to incorporate additional functionality and complexity into device designs. 
+
+\subsection{ Photon state engineering}
+In addition to producing circuits the FLDW technique has been shown to be useful both at the production and collection of heralded single photons. A heralded single photon source is a photon source which produces two photons simultaneously but stochastically, one of the photons is detected thus heralding the presence of the other photon. A heralded photon source is an excellent approximation to a true single photon source. Typically these coincident photons are produced using nonlinear three wave mixing processes. However, most experiments have used a bulk optic source and collected the downconverted photons into optical fibres (as in Fig.~\ref{fig:GDM_opex}). This approach is neither scalable nor efficient since overlapping multiple spatial modes on a crystal is challenging. Recently, an FLDW waveguide in silica glass has been used to produce heralded photons through spontaneous four wave mixing (SFWM)~\cite{Spring2013a}. This relies on a $\chi^{(3)}$ nonlinearity which is small in fused silica glass but is offset by the fact that the extraction efficiency of the waveguides are excellent. Birefringence phase matching was used in order to match the velocities of the signal and idler photons during the SFWM process. High purity heralded single photons were produced using this scheme and this points to the potential of producing multiple identical waveguides and pumping the simultaneously. However, an alternative approach is to exploit high efficiency waveguides in $\chi^(2)$ nonlinear materials, such as periodically poled lithium niobate (PPLN), to produce photon pairs (See fig.~\ref{fig:hybrid_integration}). The advantage of this is that by using periodic poling a phase matching condition can be fulfilled for a larger range of pump, signal and idler wavelengths. By hybrid interfacing PPLN directly with laser inscribed waveguide circuits it is possible to gain an advantage over using the two platforms in isolation. PPLN is an excellent nonlinear material, yet it is not ideal for simple linear operations. The FLDW technique is excellent for low loss photon routing and linear devices like beamsplitters  and  wavelength demultiplexers (WDM). 
+\begin{figure}[h]  
+\begin{center}
+\includegraphics[width=0.35\textwidth]{hybrid_integration}
+\caption{ A hybrid integrated circuit which incorporates linear components, manufactured using FLDW, to pump and spatially separate heraled single photons from four modes simultaneously~\cite{Meany20014}. } \vspace{-3mm}
+ \label{fig:hybrid_integration} 
+\end{center}
+\end{figure}
+
+
+Waveguide processing in advancing and optimised structures for both the collection and transmission of light at 800~nm and telecommunication wavelengths are progressing\cite{Eaton2009,Meany2013,Meany20014}. Additional chip density is possible by using novel three dimensional interaction regions to produce multimode transformations or to stack circuit elements vertically. One clear path toward increasing chip density is to increase the maximum obtainable refractive index contrast available when producing laser inscribed waveguides. The minimum bend radius is dependent on the refractive index contrast of a waveguide and hence by increasing this it is possible to reduce the minimum bending radius and therefore structures like directional couplers can be produced with a smaller footprint. Eaton~\emph{et al.} have shown that it is possible to obtain refractive index contrasts up to $2.2\times10^{-2}$~\cite{Eaton2011}. An alternative route to increasing circuit density and functionality is to incorporate functions such as detection and photon generation on chip. Significant progress has been made in this area using both a hybrid integration approach and exploiting the inherent nonlinearity of silica waveguides. Enhancing the photon generation efficiency could be achieved by reducing the effective mode area of the waveguide or using novel methods or substrates to enhance the nonlinearity of the material.
+
+The relationship between the effective mode area, $A_{eff} = \frac{\pi}{4} MFD^2$ and the nonlinear process efficiency is,
+\begin{equation}
+\gamma=\frac{\omega n_2}{c A_{eff}}
+\end{equation}
+where $n_2$ is the nonlinear refractive index, $\omega$ is the angular frequency of the light and $c$ is the speed of light in vacuum. Measurements of the nonlinear refractive index in fused silica have found similar values in laser written waveguides of 30-90$\%$ of the bulk material of 2.7$\times10^{-20}$~m$^2$/W dependent on the writing velocity~\cite{Blomer2006}. Although it is important to note that these measurements did observe that $n_2$ was much more strongly effected than the linear refractive index during laser processing.
+ 
+Spring~\emph{et al.} have shown that the high extraction efficiency from laser written waveguides compensates for the lower production efficiency compared to other materials~\cite{Spring2013a}. Furthermore the nonlinearity of the amorphous $\chi^{(3)}$ material can be enhanced using thermal poling methods to produce an effective second order nonlinearity from a third order nonlinearity~\cite{Dussauze2012,Li2009}. This process uses a high voltage applied across a sample while it is heated and once it cools to room temperature this electrostatic field is frozen into the material. The resulting $\chi^{(2)}_{eff}$ is related to $\chi^{(3)}$ through, $\chi^{(2)}_{eff}=3\chi^{(3)}E_{frozen}$, where an electric field, $E_{frozen}$ is frozen within the glass structure.  This was initially applied to laser written waveguides by Corbari~\emph{et al.} and later an electro-optically tuned Mach Zehnder was produced exploiting this technique~\cite{Corbari2002,Li2006}. Thermal poling has been applied to laser written waveguides in Eagle-2000 glass and the results do show a higher nonlinearity that that of the bulk glass and of unmodified fused silica~\cite{Li2006,An2008,An2014}. The electro-optic and optical nonlinearity could then potentially be exploited in a waveguide circuit composed of Eagle-2000 which has inherently low insertion loss. By using glasses with a higher $\chi^{(3)}$ the effective $\chi^{(2)}_{eff}$ will therefore be higher. Laser written waveguides have been produced in chalcogenide glasses, such as gallium lanthanum sulphide (GLS), with transmission losses as low as 0.65~dB/cm~\cite{McMillen2012}. It has been shown that the nonlinearity of the modified material is preserved after illumination\cite{Hughes2009,McCarthy2012}. Directional couplers and even waveguide Bragg gratings (WBG) have been fabricated in GLS showing the potential for quantum integrated circuit applications exploiting this material~\cite{Rodenas2012,Li2014}. By exploiting this materials nonlinear properties it would be possible to produce highly nonlinear waveguides capable of high efficiency heralded single photon generation. 
+
+\subsection{Novel 3D waveguide designs}
+
+Next gen simulations which are achievable using the FLDW technique.
+ 
+\section{Conclusion}
+
+
+
+\begin{acknowledgement}
+\textbf{Authors amend as appropriate} 
+
+This research was conducted in part by the Australian Research Council Centre of Excellence for Ultrahigh bandwidth Devices for Optical Systems (CE110001018) and the Optofab node of the Australian National Fabrication Facility. 
+TM acknowledges the Marie Sklodowska-Curie action ``PICQUE" grant number 
+\end{acknowledgement}
+
+% The authors' biographies are given inside an \authorbox command 
+% each, all together enclosed in this environment.  Here is the 
+% syntax:  
+% \authorbox{<name>}{Authorname}{Text}
+% where "<name>" is the Filename of the portrait picture, if any; it
+% should consist of the author's last name prefixed with "cv".
+% "Authorname" is this respective author's name being bolded as the
+% first word(s) of the biography text, the rest of which follows in
+% the third argument.
+\begin{biographies}
+  \bigskip
+  
+  \authorbox{thomas_meany-sm}{Thomas Meany}{received his Ph.\,D. degree at
+  Macquarie University, Sydney, Australia. Thomas currently works as a Marie Curie Fellow in the Cambridge research laboratory of Toshiba Research Europe on applications of quantum science. He is a founder of Irish Water Fountain (www.irishwaterfountain.com) a company established to produce microfluidic elements for in-situ water quality testing systems.}
+ 
+  \authorbox{empty2h}{Markus Gr\"{a}fe}{received his Ph.\,D. degree at
+  Another University, Elsewhere.  This is the text of this author's
+  biography.  Ut mea sint constituam, cu pro impedit constituam.  Et
+  diam wisi tollit mel, te has atqui veritus.  Falli volumus
+  ullamcorper id vis, fugit debet ei pri.  Mea esse saperet oporteat
+  cu, sumo interesset an cum.  Facer expetenda ius te, sint mundi
+  aperiri no est, mollis salutandi quo ne.  No dicta errem sed.}
+ 
+  \authorbox{empty2h}{Ren\'{e} Heilmann}{received his Ph.\,D. degree at
+  Another University, Elsewhere.  This is the text of this author's
+  biography.  Ut mea sint constituam, cu pro impedit constituam.  Et
+  diam wisi tollit mel, te has atqui veritus.  Falli volumus
+  ullamcorper id vis, fugit debet ei pri.  Mea esse saperet oporteat
+  cu, sumo interesset an cum.  Facer expetenda ius te, sint mundi
+  aperiri no est, mollis salutandi quo ne.  No dicta errem sed.}
+ 
+  \authorbox{empty2h}{Armando Perez-Leija}{received his Ph.\,D. degree at
+  Another University, Elsewhere.  This is the text of this author's
+  biography.  Ut mea sint constituam, cu pro impedit constituam.  Et
+  diam wisi tollit mel, te has atqui veritus.  Falli volumus
+  ullamcorper id vis, fugit debet ei pri.  Mea esse saperet oporteat
+  cu, sumo interesset an cum.  Facer expetenda ius te, sint mundi
+  aperiri no est, mollis salutandi quo ne.  No dicta errem sed.}
+  
+  \authorbox{empty2h}{Simon Gross}{received his Ph.\,D. degree at
+  Another University, Elsewhere.  This is the text of this author's
+  biography.  Ut mea sint constituam, cu pro impedit constituam.  Et
+  diam wisi tollit mel, te has atqui veritus.  Falli volumus
+  ullamcorper id vis, fugit debet ei pri.  Mea esse saperet oporteat
+  cu, sumo interesset an cum.  Facer expetenda ius te, sint mundi
+  aperiri no est, mollis salutandi quo ne.  No dicta errem sed.}
+  
+  \authorbox{empty2h}{Alexander Szameit}{received his Ph.\,D. degree at
+  Another University, Elsewhere.  This is the text of this author's
+  biography.  Ut mea sint constituam, cu pro impedit constituam.  Et
+  diam wisi tollit mel, te has atqui veritus.  Falli volumus
+  ullamcorper id vis, fugit debet ei pri.  Mea esse saperet oporteat
+  cu, sumo interesset an cum.  Facer expetenda ius te, sint mundi
+  aperiri no est, mollis salutandi quo ne.  No dicta errem sed.}
+
+ \authorbox{empty2h}{M. J. Steel}{received his Ph.\,D. degree at
+  Another University, Elsewhere.  This is the text of this author's
+  biography.  Ut mea sint constituam, cu pro impedit constituam.  Et
+  diam wisi tollit mel, te has atqui veritus.  Falli volumus
+  ullamcorper id vis, fugit debet ei pri.  Mea esse saperet oporteat
+  cu, sumo interesset an cum.  Facer expetenda ius te, sint mundi
+  aperiri no est, mollis salutandi quo ne.  No dicta errem sed.}
+  
+   \authorbox{empty2h}{Michael J. Withford}{received his Ph.\,D. degree at
+  Another University, Elsewhere.  This is the text of this author's
+  biography.  Ut mea sint constituam, cu pro impedit constituam.  Et
+  diam wisi tollit mel, te has atqui veritus.  Falli volumus
+  ullamcorper id vis, fugit debet ei pri.  Mea esse saperet oporteat
+  cu, sumo interesset an cum.  Facer expetenda ius te, sint mundi
+  aperiri no est, mollis salutandi quo ne.  No dicta errem sed.}
+\end{biographies}
+
+\newpage%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% Give your bibliography below.  If you are using BibTeX please make 
+% sure to enclose all .bib files needed!
+%\begin{thebibliography}{00}
+\bibliographystyle{lpr}
+\bibliography{My_Collection}
+%\end{thebibliography}
+
+\end{document}
+% Here, the article ends.
