@@ -150,8 +150,9 @@ img {
 
 p img {
   display: inline;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  margin: 10px 0 10px 0;
   vertical-align: middle;
   text-align: center;
   border: none;
