@@ -289,7 +289,7 @@ Full-Width Styles
   border-bottom-right-radius: 2px;
 }
 
-#header_wrap {
+#header_wrap .outer {
    background: url(../images/laser_writing_1_vglow_v2.png);
    border-top: 1px solid #111;
   border-bottom: 1px solid #111;
@@ -299,15 +299,6 @@ Full-Width Styles
   background: -ms-linear-gradient(top, #373737, #212121);
   background: -o-linear-gradient(top, #373737, #212121);
   background: linear-gradient(top, #373737, #212121);
-}
-
-#header_wrap .inner {
-  background: url(../images/laser_writing_1_vglow_v2.png);
-   background-size: 200% 100%;
-   border-top: 1px solid #111;
-  border-bottom: 1px solid #111;
-  border-bottom-right-radius: 1px solid #111;
-  padding: 50px 10px 30px 10px;
 }
 
 #project_title {
