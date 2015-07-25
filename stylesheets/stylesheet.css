@@ -303,6 +303,12 @@ Full-Width Styles
 }
 
 #header_wrap .inner {
+  background: url(../images/laser_writing_1_vglow_v2.png);
+   background-size: 100% 100%;
+   border-top: 1px solid #111;
+  border-bottom: 1px solid #111;
+  border-bottom-right-radius: 1px solid #111;
+  opacity: 0.4;
   padding: 50px 10px 30px 10px;
 }
 
