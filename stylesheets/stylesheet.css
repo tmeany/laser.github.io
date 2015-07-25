@@ -290,7 +290,7 @@ Full-Width Styles
 }
 
 #header_wrap {
-  background: url('../images/background.jpg')
+  background: url('../images/background.jpg');
 }
 
 #header_wrap .inner {
