@@ -361,6 +361,7 @@ Full-Width Styles
   background: url(../images/laser_writing_1_vglow_v2.png);
   border-top: 1px solid #111;
   border-bottom: 1px solid #111;
+  opacity: 0.4;
 }
 
 #main_content {
