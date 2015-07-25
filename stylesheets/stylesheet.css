@@ -262,7 +262,6 @@ Full-Width Styles
   width: 100%;
 }
 
-
 .outer {
   width: 100%;
 }
@@ -290,7 +289,7 @@ Full-Width Styles
 }
 
 #header_wrap {
-  background: #212121;
+  background: url(../images/laser_writing_1_vglow_v2.png);
   background: -moz-linear-gradient(top, #373737, #212121);
   background: -webkit-linear-gradient(top, #373737, #212121);
   background: -ms-linear-gradient(top, #373737, #212121);
@@ -358,7 +357,6 @@ Full-Width Styles
 }
 
 #main_content_wrap {
-  background: url(../images/laser_writing_1_vglow_v2.png);
   border-top: 1px solid #111;
   border-bottom: 1px solid #111;
   opacity: 0.4;
