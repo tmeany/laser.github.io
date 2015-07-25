@@ -358,7 +358,7 @@ Full-Width Styles
 }
 
 #main_content_wrap {
-  background: url(../images/laser_writing_1_vglow_v2.png);
+  background: url(../images/background.jpg);
   border-top: 1px solid #111;
   border-bottom: 1px solid #111;
   border-bottom-right-radius: 1px solid #111;
@@ -370,7 +370,7 @@ Full-Width Styles
 }
 
 #footer_wrap {
-  background: url(../images/background.jpg);
+  background: url(../images/laser_writing_1_vglow_v2.png);
    border-top: 1px solid #111;
   border-bottom: 1px solid #111;
   border-bottom-right-radius: 1px solid #111;
