@@ -260,6 +260,7 @@ Full-Width Styles
 .nav {
   color: blue;
   width: 100%;
+  display:inline;
 }
 
 .outer {
