@@ -280,7 +280,7 @@ Full-Width Styles
   top:0;
   right: 10px;
   z-index: 10;
-  padding: 10px 50px 10px 10px;
+  padding: 5px 20px 5px 5px;
   color: #fff;
   background: url('../images/blacktocat.png') #0090ff no-repeat 95% 50%;
   font-weight: 700;
@@ -290,8 +290,8 @@ Full-Width Styles
 }
 
 #header_wrap {
-   background: url(../images/laser_writing_1_vglow_v2.png);
-   background-size: 150% 120%;
+   background: url(../images/background.png);
+   background-size: 100% 100%;
    border-top: 1px solid #111;
   border-bottom: 1px solid #111;
   border-bottom-right-radius: 1px solid #111;
@@ -325,7 +325,7 @@ Full-Width Styles
 }
 
 #main_content_wrap {
-  background: url(../images/background.png);
+  background: url(../images/laser_writing_1_vglow_v2.png);
   background-size: 100% 100%;
   border-top: 1px solid #111;
   border-bottom: 1px solid #111;
