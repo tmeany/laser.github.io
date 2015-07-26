@@ -291,7 +291,7 @@ Full-Width Styles
 
 #header_wrap {
    background: url(../images/background.png);
-   background-size: 100% 100%;
+   background-size: 100% 150%;
    border-top: 1px solid #111;
   border-bottom: 1px solid #111;
   border-bottom-right-radius: 1px solid #111;
@@ -326,7 +326,7 @@ Full-Width Styles
 
 #main_content_wrap {
   background: url(../images/laser_writing_1_vglow_v2.png);
-  background-size: 100% 100%;
+  background-size: 150% 100%;
   border-top: 1px solid #111;
   border-bottom: 1px solid #111;
   border-bottom-right-radius: 1px solid #111;
