@@ -274,6 +274,11 @@ Full-Width Styles
 .outer {
   width: 100%;
 }
+.linkout {
+  color: blue;
+  display: inline;
+  text-transform: uppercase;
+}
 
 .inner {
   position: relative;
