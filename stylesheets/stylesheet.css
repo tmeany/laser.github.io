@@ -267,6 +267,7 @@ Full-Width Styles
 
 .nav li {
   color: #fff;
+  outline-color: white
   display: inline;
   text-transform: uppercase;
 }
