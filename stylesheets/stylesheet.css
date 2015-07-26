@@ -305,9 +305,9 @@ Full-Width Styles
 
 #header_wrap {
    background: url(../images/background.png);
-   background-size: 110% 140%;
+   background-size: 130% 140%;
    border-top: 1px solid #111;
-  border-bottom: 1px solid #111;
+  border-bottom: 10px solid #111;
   border-bottom-right-radius: 1px solid #111;
  
 }
