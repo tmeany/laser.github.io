@@ -11,7 +11,10 @@
   display: inline;
   text-transform: uppercase;
 }
-
+.upadates {
+  margin-left: 10px auto;
+  margin-right: auto;
+}
 .jumbotron {
   background-image:url('http://www.cam-ceeds.org/ckfinder/userfiles/images/about_us.jpg');
   height: 500px;
