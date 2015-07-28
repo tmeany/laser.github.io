@@ -11,6 +11,9 @@
   display: inline;
   text-transform: uppercase;
 }
+.introduction {
+  margin: auto;
+}
 .upadates {
   margin-left: 10px auto;
   margin-right: auto;
