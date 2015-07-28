@@ -12,13 +12,11 @@
   text-transform: uppercase;
 }
 .introduction {
-  margin-left: 10px ;
-  margin-right: 10px;
+  margin: 10px 0;
   padding: 14px
 }
 .upadates {
-  margin-left: 10px ;
-  margin-right: 10px;
+  margin: 10px 0;
   padding: 14px
 }
 .jumbotron {
